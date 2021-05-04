@@ -7,6 +7,18 @@ import "./Home.css";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+// import Message from "./Message";
+import { Alert } from "react-bootstrap";
+import {
+  Card,
+  CardText,
+  CardLink,
+  CardTitle,
+  CardSubtitle,
+} from "react-bootstrap";
+{
+  /* <Message */
+}
 function Homepage() {
   const [allStatesName, setAllStatesName] = useState([]);
   const [selectState, setSelectState] = useState(null);
@@ -73,8 +85,6 @@ function Homepage() {
           });
       }
     }
-
-    //
   }, [selectState, selectCity, startDate]);
 
   //   console.log(allStatesName);
@@ -99,16 +109,45 @@ function Homepage() {
         selected={startDate}
         onChange={(date) => setStartDate(date)}
       />
-      {info.length > 0 ?
+      {info.length > 0 ? (
+        <Alert variant="success">
+          Here is some center for you! You can book your slot on{" "}
+          <a href="https://selfregistration.cowin.gov.in/">Cowin</a> Official
+          website
+        </Alert>
+      ) : selectCity !== null ? (
+        <Alert variant="danger"></Alert>
+      ) : null}
       <>
-      {info.map((x)=>(
+        {info.map((x) => (
           <div>
-              
-          </div>
+            <div class="courses-container">
+              <div class="course">
+                <div class="course-preview">
+                  <h6>{x.center_id}</h6>
+                  <h2>{x.name}</h2>
+                  <h5>{x.block_name + " " + x.district_name + " " + x.state_name} </h5>
+                  <h5>{x.pincode}</h5>
+                </div>
+                <div class="course-info">
+                  <div class="progress-container">
+                    <span class="progress-text">Time :- ${x.from+ " - " + x.to} </span>
+                  </div>
+                  <h6>Fees : {x.fee}</h6>
+                  <h6> Avalables : {x.available_capacity}</h6>
 
-      )) }  
+                    {x.slots.map((p)=>(
+                        <h2>{p}</h2>
+                    ))}
+{/* 
+                    <h2>Callbacks & Closures</h2> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </>
-     : null}
+      )
     </>
   );
 }
