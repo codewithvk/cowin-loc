@@ -1,0 +1,10 @@
+body{
+    margin: auto;
+    width: 80%;
+}
+
+.dropdown {
+    justify-items: flex;
+    justify-content: center;
+    width: 30vh;
+}
