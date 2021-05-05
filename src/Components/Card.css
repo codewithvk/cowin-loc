@@ -277,3 +277,20 @@ body {
     right: 10px;
   }
 }
+
+/* ipad */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* mobile */
+@media (max-width: 767px){
+  .course{display: block;max-width: 37%;margin: 0 auto 40px auto;}
+  .course-preview{max-width: 100%;}
+  .progress-container{top: 5px;right: 10px;}
+  .course h2{font-size: 21px;}
+  .course h5{font-size: 16px;}
+  .course h6{margin-bottom: 10px;}
+
+  .fade.alert.alert-success.show{width: 50%;text-align: center;margin: 30px auto;}
+}

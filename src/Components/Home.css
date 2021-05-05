@@ -1,14 +1,14 @@
-body {
+/* body {
   margin: auto;
   width: 100%;
   display: grid;
   grid-auto-flow: row; ;
   grid-row-gap: 10px;
-/* grid-column-gap: 10px */
+grid-column-gap: 10px
 }
 .dropdown {
-  /* justify-items: flex;
-  width: 30vh; */
+  justify-items: flex;
+  width: 30vh;
 
 }
 .fullcomp {
@@ -16,4 +16,14 @@ body {
 }
 Alert {
   margin: 10px;
+} */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+@media (max-width: 767px){
+
+  .infocomp {width: 100%;margin: 30px auto 0 auto;}
+  .datecom {width: 100%;margin: 30px auto;}
 }
