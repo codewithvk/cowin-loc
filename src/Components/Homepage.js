@@ -10,7 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 // import Message from "./Message";
 import { Alert } from "react-bootstrap";
 import CardCom from "./Card";
-
+import Card2 from "./Card2";
 
 {
   /* <Message */
@@ -88,45 +88,79 @@ function Homepage() {
 
   console.log(convert(startDate));
   return (
-    <div ClassName="fullcomp">
-    <div className="infocomp">
-      <h3>Select Your state</h3>
-      <Select
-        className="dropdown"
-        options={allStatesName}
-        onChange={(opt) => setSelectState(opt.value)}
-        placeholder="Select your state..."
-      />
-      </div>
-      <div className="infocomp">
-        <h3>Select Your City</h3>
-      <Select
-        className="dropdown"
-        options={allCityName}
-        onChange={(opt) => setSelectCity(opt.value)}
-        placeholder="Select your city..."
-      />
-      </div>
-      <div className="datecom">
-        <h3>choose date</h3>
-      <DatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-      />
-      </div>
-      
-      {info.length > 0 ? (
-        <Alert variant="success">
-          Here is some center for you! You can book your slot on{" "}
-          <a href="https://selfregistration.cowin.gov.in/">Cowin</a> Official
-          website
-        </Alert>
-      ) : selectCity !== null ? (
-        <Alert variant="danger"></Alert>
-      ) : null}
-      
-      <CardCom info={info}></CardCom>
-    </div>
+    <>
+      {selectState === null && selectCity === null ? (
+        <div>
+          <h1>hello</h1>
+          <div className="infocomp">
+            <h3>Select Your state</h3>
+            <Select
+              className="dropdown"
+              options={allStatesName}
+              onChange={(opt) => setSelectState(opt.value)}
+              placeholder="Select your state..."
+            />
+          </div>
+          <div className="infocomp">
+            <h3>Select Your City</h3>
+            <Select
+              className="dropdown"
+              options={allCityName}
+              onChange={(opt) => setSelectCity(opt.value)}
+              placeholder="Select your city..."
+            />
+          </div>
+          <div className="datecom">
+            <h3>choose date</h3>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+            />
+          </div>
+        </div>
+      ) : (
+        <div ClassName="fullcomp">
+          <div className="infocomp">
+            <h3>Select Your state</h3>
+            <Select
+              className="dropdown"
+              options={allStatesName}
+              onChange={(opt) => setSelectState(opt.value)}
+              placeholder="Select your state..."
+            />
+          </div>
+          <div className="infocomp">
+            <h3>Select Your City</h3>
+            <Select
+              className="dropdown"
+              options={allCityName}
+              onChange={(opt) => setSelectCity(opt.value)}
+              placeholder="Select your city..."
+            />
+          </div>
+          <div className="datecom">
+            <h3>choose date</h3>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+            />
+          </div>
+
+          {info.length > 0 ? (
+            <Alert variant="success">
+              Here is some center for you! You can book your slot on{" "}
+              <a href="https://selfregistration.cowin.gov.in/">Cowin</a>{" "}
+              Official website
+            </Alert>
+          ) : selectCity !== null ? (
+            <Alert variant="danger"></Alert>
+          ) : null}
+
+          <CardCom info={info}></CardCom>
+          {/* <Card2  info={info}/> */}
+        </div>
+      )}
+    </>
   );
 }
 
