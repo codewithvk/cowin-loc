@@ -1,10 +1,10 @@
-body {
-  margin: auto;
-  width: 80%;
+.menu{
+  margin: 100px auto;
+  justify-content: center;
 }
 
 .dropdown {
-  justify-items: flex;
+  margin: 10px auto;
   justify-content: center;
   width: 30vh;
 }
@@ -17,17 +17,20 @@ body {
   box-sizing: border-box;
 }
 
-body {
+#root {
   font-family: "Muli", sans-serif;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0;
+  padding: auto;
+  text-align: center;
+  padding: 10px;
 }
 
 .courses-container {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .course {
@@ -37,6 +40,8 @@ body {
   display: flex;
   max-width: 100%;
   margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
   width: 700px;
 }
@@ -272,11 +277,32 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .social-panel-container.visible {
-    transform: translateX(0px);
+  
+  .courses-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    /* justify-content: center;
+    align-items: center */
   }
 
-  .floating-btn {
-    right: 10px;
+  .course {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    width: 700px;
+  }
+
+  .progress-text {
+    font-size: 10px;
+    opacity: 0.6;
+    letter-spacing: 1px;
   }
 }
