@@ -18,12 +18,18 @@ Alert {
   margin: 10px;
 } */
 
+.infocomp {margin: 30px auto 0 auto;}
+.datecom {margin: 30px auto;}
+
 @media (min-width: 768px) and (max-width: 1024px) {
 
 }
 
 @media (max-width: 767px){
 
-  .infocomp {width: 100%;margin: 30px auto 0 auto;}
-  .datecom {width: 100%;margin: 30px auto;}
+  .for_homepage .infocomp {width: 100%;margin: 30px auto 0 auto;}
+  .for_homepage .datecom {width: 100%;margin: 30px auto;}
+
+  .infocomp {width: 30%;margin: 30px auto 0 auto;}
+  .datecom {width: 30%;margin: 30px auto;}
 }

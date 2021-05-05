@@ -10,7 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 // import Message from "./Message";
 import { Alert } from "react-bootstrap";
 import CardCom from "./Card";
-import Card2 from "./Card2";
+// import Card2 from "./Card2";
 
 {
   /* <Message */
@@ -89,8 +89,8 @@ function Homepage() {
   console.log(convert(startDate));
   return (
     <>
-      {selectState === null && selectCity === null ? (
-        <div>
+      {selectState === null || selectCity === null ? (
+        <div className="for_homepage">
           <h1>hello</h1>
           <div className="infocomp">
             <h3>Select Your state</h3>
