@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Searchable from "react-searchable-dropdown";
-import SelectSearch from "react-select-search";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 import Select from "react-select";
 import "./Home.css";
 import axios from "axios";
@@ -10,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 // import Message from "./Message";
 import { Alert } from "react-bootstrap";
 import CardCom from "./Card";
-// import Card2 from "./Card2";
+
 
 {
   /* <Message */
@@ -89,42 +86,14 @@ function Homepage() {
   console.log(convert(startDate));
   return (
     <>
-      {selectState === null || selectCity === null ? (
-        <div className="for_homepage">
-          <h1>hello</h1>
-          <div className="infocomp">
-            <h3>Select Your state</h3>
-            <Select
-              className="dropdown"
-              options={allStatesName}
-              onChange={(opt) => setSelectState(opt.value)}
-              placeholder="Select your state..."
-            />
-          </div>
-          <div className="infocomp">
-            <h3>Select Your City</h3>
-            <Select
-              className="dropdown"
-              options={allCityName}
-              onChange={(opt) => setSelectCity(opt.value)}
-              placeholder="Select your city..."
-            />
-          </div>
-          <div className="datecom">
-            <h3>choose date</h3>
-            <DatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-            />
-          </div>
-        </div>
-      ) : (
+      
         <div ClassName="fullcomp">
           <div className="infocomp">
             <h3>Select Your state</h3>
             <Select
               className="dropdown"
               options={allStatesName}
+              // value={selectState}
               onChange={(opt) => setSelectState(opt.value)}
               placeholder="Select your state..."
             />
@@ -134,6 +103,7 @@ function Homepage() {
             <Select
               className="dropdown"
               options={allCityName}
+              // value={selectCity}
               onChange={(opt) => setSelectCity(opt.value)}
               placeholder="Select your city..."
             />
@@ -159,7 +129,7 @@ function Homepage() {
           <CardCom info={info}></CardCom>
           {/* <Card2  info={info}/> */}
         </div>
-      )}
+      
     </>
   );
 }

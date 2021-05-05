@@ -17,10 +17,15 @@ grid-column-gap: 10px
 Alert {
   margin: 10px;
 } */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
 .infocomp {margin: 30px auto 0 auto;}
 .datecom {margin: 30px auto;}
+.dropdown {
+  justify-items: flex;
+  width: 30vh;
 
+}
 @media (min-width: 768px) and (max-width: 1024px) {
 
 }
